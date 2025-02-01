@@ -2,6 +2,7 @@
 {config, pkgs, ...} : {
         imports = [
         ./packages.nix
+        ./unstablepackages.nix
         ];
 
         home.stateVersion = "24.11";

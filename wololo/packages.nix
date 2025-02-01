@@ -1,8 +1,8 @@
 {config, pkgs, ...} : {
     home.packages = with pkgs; [
         youtube-music
-        equicord
         discord
+        equicord
         keepassxc
         neovide
 
