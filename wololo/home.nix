@@ -2,6 +2,7 @@
 {config, pkgs, nixvim, ...} : {
         imports = [
 	./packages.nix
+	./nvimconf.nix
         ];
 
         home.stateVersion = "24.11";
