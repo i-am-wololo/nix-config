@@ -7,17 +7,20 @@
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		nixvim.url = "github:nix-community/nixvim";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs: {
 
 
     nixosConfigurations.nixos =  let
     system = "x86_64-linux";
     in
     nixpkgs.lib.nixosSystem {
-      inherit system;
-      modules = [
+	
+	specialArgs = {inherit inputs system;};
+	inherit system;
+	modules = [
 
         ./configuration.nix
 
