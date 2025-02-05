@@ -8,7 +8,6 @@
 	lazygit
 
         # Games
-        bottles
         tetrio-desktop
         rpcs3
     ];

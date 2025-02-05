@@ -1,18 +1,12 @@
 
-{config, pkgs, nixvim, ...} : {
+{config, pkgs, inputs, ...} : {
         imports = [
 	./packages.nix
-	./nvimconf.nix
+	# ./nvimconf.nix
+	./stable.nix
         ];
 
         home.stateVersion = "24.11";
-
-
-        programs.neovim = {
-        enable = true;
-        defaultEditor = true;
-        };
-
 
         programs.git = {
             enable = true;
