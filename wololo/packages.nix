@@ -6,6 +6,7 @@
 	tor-browser
         equibop
 	lazygit
+	unrar-wrapper
 
         # Games
         tetrio-desktop

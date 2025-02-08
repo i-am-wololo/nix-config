@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./nvimconf.nix
     ];
 
   # Bootloader.
@@ -103,6 +104,10 @@
 
   # Install partition manager
   programs.partition-manager.enable = true;
+
+  # Install gamemode
+  programs.gamemode.enable = true;
+  
 
 
   # Allow unfree packages

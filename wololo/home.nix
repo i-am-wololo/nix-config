@@ -2,7 +2,6 @@
 {config, pkgs, inputs, ...} : {
         imports = [
 	./packages.nix
-	# ./nvimconf.nix
 	./stable.nix
         ];
 
@@ -12,10 +11,6 @@
             enable = true;
             userName = "wololo";
             userEmail = "somedudz@protonmail.com";
-        };
-
-        programs.nixvim = {
-                enable = true;
         };
 
         #programs.zsh = {

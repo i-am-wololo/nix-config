@@ -11,7 +11,7 @@
 		nixvim.url = "github:nix-community/nixvim";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixvim, stable, ... }@inputs: {
 
 
     nixosConfigurations.nixos =  let
@@ -22,12 +22,16 @@
 	specialArgs = {inherit inputs system;};
 	inherit system;
 	modules = [
-
+	nixvim.nixosModules.nixvim
         ./configuration.nix
-
         home-manager.nixosModules.home-manager {
 
-		home-manager.extraSpecialArgs = { inherit inputs system;};
+		home-manager.extraSpecialArgs = { 
+			inherit inputs system;
+			pkgs-stable = import stable { inherit system; 
+						      config.allowUnfree = true;
+						      };
+		};
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 

@@ -1,6 +1,6 @@
-{pkgs, inputs, ...}:
+{pkgs, pkgs-stable, ...}:
 {
-	home.packages = with inputs.stable; [
+	home.packages = with pkgs-stable; [
 		bottles
-	]
+	];
 }
