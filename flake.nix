@@ -16,10 +16,14 @@
 
     nixosConfigurations.nixos =  let
     system = "x86_64-linux";
+    pkgs-stable = import stable { inherit system; 
+				      config.allowUnfree = true;
+					};
     in
     nixpkgs.lib.nixosSystem {
 	
-	specialArgs = {inherit inputs system;};
+	specialArgs = {inherit inputs system pkgs-stable;};
+
 	inherit system;
 	modules = [
 	nixvim.nixosModules.nixvim
@@ -27,10 +31,7 @@
         home-manager.nixosModules.home-manager {
 
 		home-manager.extraSpecialArgs = { 
-			inherit inputs system;
-			pkgs-stable = import stable { inherit system; 
-						      config.allowUnfree = true;
-						      };
+			inherit inputs system pkgs-stable;
 		};
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

@@ -23,5 +23,10 @@
         #    enableZshIntegration = true;
         #};
 
+	programs.direnv = {
+		enable = true;
+		enableBashIntegration = true;
+	};
+
 }
 

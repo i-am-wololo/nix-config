@@ -2,17 +2,17 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-stable, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./nvim
+      ./boot.nix
     ];
 
   # Bootloader.
-  boot = import ./boot.nix;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -49,6 +49,10 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+
+  # Enable OpenGL
+  hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -109,8 +113,6 @@
 
   # Install gamemode
   programs.gamemode.enable = true;
-  
-
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -121,7 +123,13 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
+    amdvlk
+    driversi686Linux.amdvlk
   ];
+
+  environment.sessionVariables = rec {
+    GSK_RENDERER = "gl";
+  };
 
   environment.variables.EDITOR = "nvim";
   # Some programs need SUID wrappers, can be configured further or are
