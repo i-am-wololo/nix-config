@@ -7,6 +7,11 @@
 
         home.stateVersion = "24.11";
 
+	programs.bash = {
+		enable = true;
+		enableCompletion = true;	
+	};
+
         programs.git = {
             enable = true;
             userName = "wololo";
@@ -27,6 +32,9 @@
 		enable = true;
 		enableBashIntegration = true;
 	};
+	
+	programs.zoxide.enable = true;
+	programs.zoxide.enableBashIntegration = true;
 
 }
 

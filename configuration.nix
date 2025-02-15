@@ -106,7 +106,10 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  programs.chromium.enable = true;
+  programs.chromium = {
+  	enable = true;
+	enablePlasmaBrowserIntegration = true;
+};
 
   # Install partition manager
   programs.partition-manager.enable = true;
