@@ -1,22 +1,25 @@
 {config, pkgs, ...} : {
     home.packages = with pkgs; [
-        youtube-music
-	chromium
-        keepassxc
-        neovide
-	tor-browser
-        equibop
-	lazygit
-	unrar-wrapper
-	logisim-evolution
+			nerd-fonts.hack
+			nerd-fonts.fira-code
+  		youtube-music
+			chromium
+  		keepassxc
+			tor-browser
+  		equibop
+			lazygit
+			unrar-wrapper
+			logisim-evolution
 
-	kdePackages.alligator
-	kdePackages.akregator
-	kdePackages.merkuro
+			kdePackages.alligator
+			kdePackages.akregator
+			kdePackages.merkuro
+			kdePackages.filelight
 
         # Games
         tetrio-desktop
-	prismlauncher
+				prismlauncher
         rpcs3
+	flycast
     ];
 }

@@ -3,6 +3,7 @@
         imports = [
 	./packages.nix
 	./stable.nix
+	./neovideconf.nix	
         ];
 
         home.stateVersion = "24.11";
