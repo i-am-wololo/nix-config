@@ -2,7 +2,7 @@
 	programs.nixvim.plugins = { 
 
 		neocord = {
-			enable = true;
+			enable = false;
 			autoLoad = true;
 			};
 		
@@ -12,6 +12,10 @@
 
 		web-devicons = {
 			enable = true;
+		};
+
+		noice = {
+			# enable = true;
 		};
 
 	};

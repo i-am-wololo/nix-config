@@ -1,1 +1,2 @@
+-- all-in-one config for nixos --
 nixos + home manager +  nixvim config, ready to install in any nixos environment (64 bit linux)

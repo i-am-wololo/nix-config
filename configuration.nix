@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./nvim
       ./boot.nix
+			./blacklist.nix
     ];
 
   # Bootloader.
