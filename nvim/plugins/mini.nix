@@ -7,6 +7,8 @@
 			starter = {};
 			files = {};
 			pick = {};
+			indentscope = {};
+			pairs = {};
 			git = {};
 		};
 	};

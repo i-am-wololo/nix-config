@@ -5,6 +5,10 @@
 { config, pkgs, pkgs-stable, ... }:
 
 {
+	nixpkgs.config.permittedInsecurePackages = [
+                "olm-3.2.16"
+  ];
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix

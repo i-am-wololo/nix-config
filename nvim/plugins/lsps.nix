@@ -1,8 +1,9 @@
 {...} : {
 	programs.nixvim.plugins.lsp = {
 		enable = true;
-		# servers = {
-		#
-		# };
+		servers = {
+			zls.enable = true;
+			tinymist.enable = true;
+		};
 	};
 }

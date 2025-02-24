@@ -11,5 +11,12 @@
 			key = "<leader>ff";
 			mode = ["n"];
 		}
-			];
+
+		{
+			action = "<CMD>Pick grep_live <CR>";
+			key = "<leader>fg";
+			mode = ["n"];
+		}
+
+	];
 }

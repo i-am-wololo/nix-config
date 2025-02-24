@@ -17,6 +17,5 @@
 		noice = {
 			# enable = true;
 		};
-
 	};
 }
