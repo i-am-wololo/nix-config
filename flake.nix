@@ -5,6 +5,7 @@
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 		stable.url = "github:NixOS/nixpkgs/nixos-24.11";
 		ps3dec.url = "github:i-am-wololo/ps3dec";
+		niri.url = "github:sodiboo/niri-flake";
 		home-manager = {
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -12,7 +13,7 @@
 		nixvim.url = "github:nix-community/nixvim";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, stable, ... }@inputs: {
+  outputs = { self, nixpkgs, niri, home-manager, nixvim, stable, ... }@inputs: {
 
 
     nixosConfigurations.nixos =  let
@@ -23,11 +24,12 @@
     in
     nixpkgs.lib.nixosSystem {
 	
-		specialArgs = {inherit inputs system pkgs-stable;};
+		specialArgs = {inherit inputs system pkgs-stable niri ;};
 
 		inherit system;
 		modules = [
-		nixvim.nixosModules.nixvim
+					nixvim.nixosModules.nixvim
+					niri.nixosModules.niri
   	      ./configuration.nix
   	      home-manager.nixosModules.home-manager {
 						home-manager.extraSpecialArgs = { 

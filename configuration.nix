@@ -2,12 +2,15 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-stable, ... }:
+{ config, pkgs, pkgs-stable, inputs,  ... }:
 
 {
 	nixpkgs.config.permittedInsecurePackages = [
                 "olm-3.2.16"
   ];
+
+	nixpkgs.overlays = [inputs.niri.overlays.niri];
+
 
   imports =
     [ # Include the results of the hardware scan.
@@ -99,11 +102,17 @@
     isNormalUser = true;
     description = "Mehdi Ben Ahmed";
     extraGroups = [ "networkmanager" "wheel" ];
+		shell = pkgs.zsh;
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
     ];
   };
+
+	# Enable zsh
+	programs.zsh.enable = true;
+
+	programs.niri.enable = true;
 
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -113,12 +122,12 @@
   services.xserver.displayManager.autoLogin.user = "wololo";
 
   # Install firefox.
-  programs.firefox.enable = true;
+  # programs.firefox.enable = true;
 
   programs.chromium = {
   	enable = true;
-	enablePlasmaBrowserIntegration = true;
-};
+		enablePlasmaBrowserIntegration = true;
+	};
 
   # Install partition manager
   programs.partition-manager.enable = true;

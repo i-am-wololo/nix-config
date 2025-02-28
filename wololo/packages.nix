@@ -1,7 +1,9 @@
-{config, pkgs, inputs, ...} : {
+{pkgs, inputs, ...} : {
     home.packages = with pkgs; [
 			nerd-fonts.hack
 			nerd-fonts.fira-code
+
+			obs-studio
   		youtube-music
 			chromium
   		keepassxc
@@ -18,11 +20,14 @@
 			kdePackages.neochat
 			kdePackages.kasts
 
-        # Games
+      # Games
     	tetrio-desktop
+			dolphin-emu
+			torzu
 			prismlauncher
       rpcs3
 			flycast
+			steam-run
     ]++ [
 			inputs.ps3dec.packages.${pkgs.stdenv.hostPlatform.system}.default
 		];
