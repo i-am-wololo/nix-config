@@ -3,7 +3,6 @@
 
 		neocord = {
 			enable = false;
-			autoLoad = true;
 			};
 		
 		lazygit =  {
@@ -15,7 +14,7 @@
 		};
 
 		noice = {
-			# enable = true;
+			enable = false;
 		};
 	};
 }

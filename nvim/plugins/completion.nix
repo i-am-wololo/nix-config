@@ -1,4 +1,4 @@
 {...} : {
-	# programs.nixvim.plugins = {
-	# };
+	programs.nixvim.plugins = {
+	};
 }

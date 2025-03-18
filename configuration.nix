@@ -79,7 +79,7 @@
   hardware.bluetooth.powerOnBoot = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -104,7 +104,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
 		shell = pkgs.zsh;
     packages = with pkgs; [
-      kdePackages.kate
+      # kdePackages.kate
     #  thunderbird
     ];
   };
@@ -112,14 +112,14 @@
 	# Enable zsh
 	programs.zsh.enable = true;
 
-	programs.niri.enable = true;
+	programs.niri.enable = false;
 
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "wololo";
+  services.displayManager.autoLogin.user = "wololo";
 
   # Install firefox.
   # programs.firefox.enable = true;

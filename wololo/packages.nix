@@ -8,6 +8,7 @@
 			chromium
   		keepassxc
 			tor-browser
+			mpv
   		equibop
 			lazygit
 			unrar-wrapper

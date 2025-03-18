@@ -10,6 +10,7 @@
 			indentscope = {};
 			pairs = {};
 			git = {};
+			sessions = {};
 		};
 	};
 

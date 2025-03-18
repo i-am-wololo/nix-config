@@ -4,7 +4,7 @@
 		./packages.nix 
 		./stable.nix
 		./neovideconf.nix
-		./niri
+		# ./niri
   ];
 
 	home.stateVersion = "24.11";
@@ -55,18 +55,12 @@
 		enable = false;
 	};
 
-	programs.foot = {
-		enable = true;
-		settings = {
-			main = {
-				font = "Hack Nerd Font:size=12";
-			};
-		};
-	};
+	
 
 	programs.aria2 = {
 		enable = true;
 	};
+
 
 	
 }
