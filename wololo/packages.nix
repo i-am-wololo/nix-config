@@ -29,6 +29,9 @@
       rpcs3
 			flycast
 			steam-run
+			crystal
+			shards
+			
     ]++ [
 			inputs.ps3dec.packages.${pkgs.stdenv.hostPlatform.system}.default
 		];

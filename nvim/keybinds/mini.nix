@@ -18,5 +18,11 @@
 			mode = ["n"];
 		}
 
+		{
+		action = "<CMD>lua MiniSessions.write(vim.fn.input('Session Name > '))<CR>";
+			key = "<leader>mk";
+			mode = ["n"];
+		}
+
 	];
 }

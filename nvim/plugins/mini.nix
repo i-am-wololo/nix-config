@@ -10,7 +10,9 @@
 			indentscope = {};
 			pairs = {};
 			git = {};
-			sessions = {};
+			sessions = {
+				directory = "~/.config/nvim/sessions";
+			};
 		};
 	};
 
