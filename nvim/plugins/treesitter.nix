@@ -10,6 +10,7 @@
 			tree-sitter-lua
 			tree-sitter-bash
 			tree-sitter-markdown
+			tree-sitter-typescript
 			tree-sitter-markdown-inline
 		];
 		treesitter.settings = {

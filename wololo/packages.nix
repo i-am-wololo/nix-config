@@ -12,6 +12,7 @@
   		equibop
 			lazygit
 			unrar-wrapper
+			p7zip
 			logisim-evolution
 
 			kdePackages.akregator
@@ -29,8 +30,12 @@
       rpcs3
 			flycast
 			steam-run
+
 			crystal
 			shards
+			imhex
+
+
 			
     ]++ [
 			inputs.ps3dec.packages.${pkgs.stdenv.hostPlatform.system}.default

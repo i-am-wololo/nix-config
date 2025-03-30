@@ -8,4 +8,9 @@
 	services.swaync = {
 		enable = true;
 	};
+
+	services.gnome-keyring = {
+		enable = true;
+	};
+
 }
