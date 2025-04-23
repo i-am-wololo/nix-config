@@ -19,7 +19,7 @@
 			};
 
 			indent = {
-				enable = true;
+				enable = false;
 			};
 
 		};

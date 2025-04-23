@@ -8,32 +8,25 @@
 			chromium
   		keepassxc
 			tor-browser
-			mpv
   		equibop
 			lazygit
 			unrar-wrapper
 			p7zip
 			logisim-evolution
-
-			kdePackages.akregator
-			kdePackages.merkuro
-			kdePackages.filelight
-			kdePackages.konversation
-			kdePackages.neochat
-			kdePackages.kasts
-
-      # Games
-    	tetrio-desktop
-			dolphin-emu
-			torzu
-			prismlauncher
-      rpcs3
-			flycast
-			steam-run
-
 			crystal
 			shards
 			imhex
+			file
+			wl-clipboard
+			wl-clipboard-x11
+
+			mupen64plus
+			rmg-wayland
+			
+			# (discord.override {
+			# 	withVencord = true;
+			# 	vencord = pkgs.equicord;
+			# })
 
 
 			

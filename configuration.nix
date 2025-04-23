@@ -59,6 +59,9 @@
   services.displayManager.sddm.enable = true;
 	services.desktopManager.plasma6.enable = true;
 
+	# Enable KWallet
+	# security.pam.services.wololo.kwallet.enable = true;
+
   # Enable OpenGL
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;

@@ -15,7 +15,7 @@
 
 		{
 			inherit mode;
-		key = "<C-S-p>"
+			key = "<C-S-p>";
 			action = "<cmd>BufferPickDelete<cr>";
 		}
 		

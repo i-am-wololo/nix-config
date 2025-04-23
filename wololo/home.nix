@@ -2,6 +2,7 @@
 {config, pkgs, inputs, lib, ...} : {
 	imports = [
 		./packages.nix 
+		./packages
 		./stable.nix
 		./neovideconf.nix
 		# ./niri
@@ -61,7 +62,12 @@
 		enable = true;
 	};
 
+	programs.mpv = {
+		enable = true;
 
+	};
+
+	
 	
 }
 
