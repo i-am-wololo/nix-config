@@ -6,5 +6,6 @@
 		kdePackages.konversation
 		kdePackages.neochat
 		kdePackages.kasts
+		kdePackages.kmail
 	];
 }

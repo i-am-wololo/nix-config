@@ -6,9 +6,13 @@
 			torzu
 			prismlauncher
       rpcs3
-			flycast
 			steam-run
 			steam
+			# (retroarch.override {
+			# 	cores = with libretro; [
+			# 	];
+			# })
+			duckstation
 
 	];
 }

@@ -8,7 +8,6 @@
 			chromium
   		keepassxc
 			tor-browser
-  		equibop
 			lazygit
 			unrar-wrapper
 			p7zip
@@ -20,12 +19,12 @@
 			wl-clipboard
 			wl-clipboard-x11
 
-			mupen64plus
+			# mupen64plus
 			rmg-wayland
 			
+			discord
 			# (discord.override {
 			# 	withVencord = true;
-			# 	vencord = pkgs.equicord;
 			# })
 
 
