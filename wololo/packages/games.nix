@@ -3,11 +3,12 @@
     	tetrio-desktop
 			gamescope
 			dolphin-emu
-			torzu
 			prismlauncher
       rpcs3
 			steam-run
 			steam
+			flycast
+			cemu
 			# (retroarch.override {
 			# 	cores = with libretro; [
 			# 	];

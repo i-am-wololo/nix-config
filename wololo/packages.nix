@@ -22,10 +22,11 @@
 			# mupen64plus
 			rmg-wayland
 			
-			discord
+			# discord
 			# (discord.override {
 			# 	withVencord = true;
 			# })
+			equibop
 
 
 			

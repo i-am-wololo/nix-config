@@ -1,3 +1,9 @@
 {...} : {
-	programs.nixvim.colorschemes.oxocarbon.enable = true;
+	programs.nixvim.colorschemes.kanagawa = {
+		enable = true;
+		settings = {
+			theme = "wave";
+			dimInactive = true;
+		};
+	};
 }

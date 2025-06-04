@@ -18,6 +18,7 @@
       ./nvim
       ./boot.nix
 			./etc/pipewire.nix
+			./services.nix
 			./blacklist.nix
     ];
 

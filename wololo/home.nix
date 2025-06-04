@@ -6,11 +6,10 @@
 		./stable.nix
 		./neovideconf.nix
 		# ./niri
+		# ./sway
   ];
 
 	home.stateVersion = "24.11";
-
-
 
 
 	programs.zsh = {
@@ -29,47 +28,40 @@
 		];
 	};
 
-  programs.git = {
+  programs = {
+		git = {
       enable = true;
       userName = "wololo";
       userEmail = "somedudz@protonmail.com";
-  };
+		};
 
 
-  programs.starship = {
-     enable = true;
-     enableZshIntegration = true;
-  };
+  	starship = {
+     	enable = true;
+     	enableZshIntegration = true;
+  	};
 
-	programs.direnv = {
-		enable = true;
-		enableZshIntegration = true;
-	};
+		direnv = {
+			enable = true;
+			enableZshIntegration = true;
+		};
 	
-	programs.zoxide = {
-		enable = true;
-		enableZshIntegration = true;
-	};
+		zoxide = {
+			enable = true;
+			enableZshIntegration = true;
+		};
 	
-	
-	programs.vscode = {
-		enable = false;
-	};
+		aria2 = {
+			enable = true;
+		};
 
-	
-
-	programs.aria2 = {
-		enable = true;
-	};
-
-	programs.mpv = {
-		enable = true;
-		scripts = with pkgs; [
-			mpvScripts.modernx
-		];
+		mpv = {
+			enable = true;
+			scripts = with pkgs; [
+				mpvScripts.modernx
+			];
+		};
 	};
 
-	
-	
 }
 

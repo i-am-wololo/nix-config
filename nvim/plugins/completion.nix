@@ -1,9 +1,10 @@
 {...} : {
 	programs.nixvim.plugins = {
-		blink-cmp = {
+		coq-nvim = {
 			enable = false;
+			installArtifacts = true;
 			settings = {
-
+				auto_start = "shut-up";
 			};
 		};
 	};
