@@ -1,10 +1,6 @@
 {...} : {
 	programs.nixvim.keymaps = [
-		{
-			action = "<CMD>lua MiniFiles.open()<CR>";
-			key = "<leader>n";
-			mode = ["n"];
-		}
+
 		
 		{
 			action = "<CMD>Pick files <CR>";
@@ -19,8 +15,20 @@
 		}
 
 		{
-		action = "<CMD>lua MiniSessions.write(vim.fn.input('Session Name > '))<CR>";
+			action.__raw = "function() MiniFiles.open() end";
+			key = "<leader>n";
+			mode = ["n"];
+		}
+
+		{
+			action.__raw = "function() MiniSessions.write(vim.fn.input('Session Name > ')) end";
 			key = "<leader>mk";
+			mode = ["n"];
+		}
+
+		{
+			action.__raw = "function() MiniSessions.select() end";
+			key = "<leader>ss";
 			mode = ["n"];
 		}
 
