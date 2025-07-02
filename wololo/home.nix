@@ -5,30 +5,29 @@
 		./packages
 		./stable.nix
 		./neovideconf.nix
-		# ./niri
 		# ./sway
+		# ./niri
   ];
 
-	home.stateVersion = "24.11";
-
-
-	programs.zsh = {
-		enable = true;
-		enableCompletion = true;
-		plugins = [
-			{
-				name = "zsh-syntax-highlighting";
-				src = pkgs.fetchFromGitHub {
-					owner = "zsh-users";
-					repo = "zsh-syntax-highlighting";
-					rev = "master";
-					sha256 = "KRsQEDRsJdF7LGOMTZuqfbW6xdV5S38wlgdcCM98Y/Q=";
-				};
-			}
-		];
-	};
+	home.stateVersion = "25.11";
 
   programs = {
+		zsh = {
+			enable = true;
+			enableCompletion = true;
+			plugins = [
+				{
+					name = "zsh-syntax-highlighting";
+					src = pkgs.fetchFromGitHub {
+						owner = "zsh-users";
+						repo = "zsh-syntax-highlighting";
+						rev = "master";
+						sha256 = "KRsQEDRsJdF7LGOMTZuqfbW6xdV5S38wlgdcCM98Y/Q=";
+					};
+				}
+			];
+		};
+
 		git = {
       enable = true;
       userName = "wololo";
@@ -60,6 +59,10 @@
 			scripts = with pkgs; [
 				mpvScripts.modernx
 			];
+		};
+
+		firefox = {
+			enable = true;
 		};
 	};
 

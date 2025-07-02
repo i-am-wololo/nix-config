@@ -9,9 +9,6 @@
                 "olm-3.2.16"
   ];
 
-	nixpkgs.overlays = [inputs.niri.overlays.niri];
-
-
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -60,10 +57,10 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
+	security.pam.services.wololo.kwallet.enable = true;
+
 	services.desktopManager.plasma6.enable = true;
 
-	# Enable KWallet
-	# security.pam.services.wololo.kwallet.enable = true;
 
   # Enable OpenGL
   hardware.graphics.enable = true;
@@ -104,8 +101,9 @@
 	# Enable zsh
 	programs.zsh.enable = true;
 
-	# Enable niri
-	programs.niri.enable = true;
+
+	# Enable sway
+	programs.sway.enable = true;
 
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -114,13 +112,18 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "wololo";
 
+	# Enable Avahi
+	# services.avahi = {
+	# 	enable = true;
+	# };
+
   # Install firefox.
   # programs.firefox.enable = true;
 
-  programs.chromium = {
-  	enable = true;
-		enablePlasmaBrowserIntegration = true;
-	};
+  # programs.chromium = {
+  # 	enable = true;
+  # enablePlasmaBrowserIntegration = true;
+	# };
 
   # Install partition manager
   programs.partition-manager.enable = true;

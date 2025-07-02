@@ -16,7 +16,7 @@
 		# };
 	};
 
-  services.gnome.gnome-keyring.enable = true;
+  # services.gnome.gnome-keyring.enable = true;
 
-	security.polkit.enable = true;
+	# security.polkit.enable = true;
 }

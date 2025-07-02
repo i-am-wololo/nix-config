@@ -27,7 +27,12 @@
 		}
 
 		{
-			action.__raw = "function() MiniSessions.select() end";
+			action.__raw = ''
+			function()
+				session = MiniPick.start({ source = {items = vim.fn.readdir("/home/wololo/.config/nvim/sessions/")}})
+				MiniSessions.read(session)
+			end
+			'';
 			key = "<leader>ss";
 			mode = ["n"];
 		}

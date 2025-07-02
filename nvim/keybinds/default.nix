@@ -56,7 +56,7 @@ imports = [
 		}
 		
 		{
-			key = "jk";
+			key = "<C-Space>";
 			action = "<C-\\><C-n>";
 			mode = ["t"];
 		}

@@ -5,7 +5,6 @@
 
 			obs-studio
   		youtube-music
-			chromium
   		keepassxc
 			tor-browser
 			lazygit
@@ -27,9 +26,6 @@
 			# 	withVencord = true;
 			# })
 			equibop
-
-
-			
     ]++ [
 			inputs.ps3dec.packages.${pkgs.stdenv.hostPlatform.system}.default
 		];
