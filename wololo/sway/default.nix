@@ -1,9 +1,11 @@
-# everything related to sway
+ # everything related to sway
 
 {pkgs, config, ...} : {
 	imports = [
 		./services.nix
 	];
+	
+	home.packages = import ./packages.nix {inherit pkgs;};
 
 	wayland.windowManager.sway = {
 		# swayfx is broken on nixpkgs for now

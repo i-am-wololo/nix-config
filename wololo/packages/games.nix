@@ -13,7 +13,6 @@
 			# 	cores = with libretro; [
 			# 	];
 			# })
-			duckstation
 
 	];
 }

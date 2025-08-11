@@ -15,7 +15,6 @@
 			shards
 			imhex
 			file
-			wl-clipboard
 			wl-clipboard-x11
 
 			# mupen64plus
@@ -26,6 +25,7 @@
 			# 	withVencord = true;
 			# })
 			equibop
+			bottles
     ]++ [
 			inputs.ps3dec.packages.${pkgs.stdenv.hostPlatform.system}.default
 		];

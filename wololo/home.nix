@@ -3,7 +3,6 @@
 	imports = [
 		./packages.nix 
 		./packages
-		./stable.nix
 		./neovideconf.nix
 		# ./sway
 		# ./niri
