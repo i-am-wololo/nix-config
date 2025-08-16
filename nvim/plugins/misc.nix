@@ -2,7 +2,7 @@
 	programs.nixvim.plugins = { 
 
 		neocord = {
-			enable = false;
+			enable = true;
 			};
 		
 		lazygit =  {

@@ -11,6 +11,7 @@
 			inherit mode;
 			key = "<C-p>";
 			action = "<cmd>BufferPick<cr>";
+			
 		}
 
 		{

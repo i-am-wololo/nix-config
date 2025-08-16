@@ -16,16 +16,12 @@
 			imhex
 			file
 			wl-clipboard-x11
-
-			# mupen64plus
 			rmg-wayland
-			
-			# discord
-			# (discord.override {
-			# 	withVencord = true;
-			# })
 			equibop
-			bottles
+
+			(bottles.override {
+				removeWarningPopup = true;
+			})
     ]++ [
 			inputs.ps3dec.packages.${pkgs.stdenv.hostPlatform.system}.default
 		];

@@ -1,8 +1,9 @@
 {...} : {
 	imports = [
-		./kde.nix
 		./games.nix
 		./misc.nix
+		./gnome.nix
+		./dev.nix
 	];
 
 
