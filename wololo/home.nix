@@ -1,10 +1,10 @@
 
-{config, pkgs, inputs, lib, ...} : {
+{pkgs, ...} : {
 	imports = [
 		./packages.nix 
 		./packages
 		./neovideconf.nix
-		# ./sway
+		./sway
 		# ./niri
   ];
 

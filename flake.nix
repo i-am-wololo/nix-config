@@ -20,9 +20,13 @@
 			url = "github:nix-community/nixvim";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		niri = {
+			url = "github:sodiboo/niri-flake";
+		};
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, nur, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixvim, nur, niri, ... }@inputs: {
 
 
     nixosConfigurations.nixos =  let
@@ -34,8 +38,10 @@
 
 		inherit system;
 		modules = [
-					nixvim.nixosModules.nixvim
   	      ./configuration.nix
+
+					niri.nixosModules.niri
+					nixvim.nixosModules.nixvim
   	      home-manager.nixosModules.home-manager {
 						home-manager.extraSpecialArgs = { 
 							inherit inputs system;

@@ -1,9 +1,9 @@
 {...} : {
-	programs.nixvim.colorschemes.kanagawa = {
+	programs.nixvim.colorschemes.kanagawa-paper = {
 		enable = true;
 		settings = {
-			theme = "wave";
 			dimInactive = true;
+			transparent = true;
 		};
 	};
 }

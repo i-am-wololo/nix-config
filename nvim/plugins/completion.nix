@@ -10,13 +10,10 @@
 		};
 
 		blink-cmp = {
-			enable = true;
+			enable = false;
 			settings = {
 				signature.enable = true;
-				keymaps.preset = "super-tab";
-				cmdline = {
-					 # sources.__raw = "function() return {} end";
-				};
+				keymap.preset = "super-tab";
 			};
 		};
 	};

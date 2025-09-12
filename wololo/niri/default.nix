@@ -1,6 +1,6 @@
 # module defining niri config and various other things
 
-{pkgs, inputs, config, ...} : {
+{pkgs, ...} : {
 	imports = [
 		./keybinds.nix
 		./rules.nix
@@ -14,7 +14,7 @@
 
 			];
 		input.keyboard.xkb = {
-				layout = "fr,us";
+				layout = "us,fr";
 				options = "grp:alt_space_toggle";
 			};
 	};
@@ -24,16 +24,6 @@
 		package = pkgs.rofi-wayland;
 	};
 
-	programs.foot = {
-		enable = true;
-		settings = {
-			main = {
-				font = "Hack Nerd Font:size=12";
-			};
-		};
-	};
-
-	home.packages = with pkgs; [
-	];
+	programs.foot = import ./foot.nix;
 
 }

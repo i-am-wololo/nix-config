@@ -18,6 +18,10 @@
 			wl-clipboard-x11
 			rmg-wayland
 			equibop
+			weechat
+			iamb
+
+
 
 			(bottles.override {
 				removeWarningPopup = true;

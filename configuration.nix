@@ -5,6 +5,8 @@
 { config, pkgs, inputs,  ... }:
 
 {
+
+	nixpkgs.overlays = [inputs.niri.overlays.niri];
 	nixpkgs.config.permittedInsecurePackages = [
                 "olm-3.2.16"
   ];
@@ -88,41 +90,30 @@
     description = "Mehdi Ben Ahmed";
     extraGroups = [ "networkmanager" "wheel" ];
 		shell = pkgs.zsh;
-    packages = with pkgs; [
-    ];
   };
 
-	# Enable zsh
-	programs.zsh.enable = true;
-
-
-	# Enable sway
-	programs.sway.enable = false;
+	programs = {
+		zsh.enable = true;
+		sway.enable = true;
+		gamemode.enable = true;
+		wireshark.enable = true;
+		# dconf.profiles.user.databases = [
+		# 	{
+		# 		settings = {
+		# 			"org/gnome/mutter" = {
+		# 				experimental-features = [
+		# 					"scale-monitor-framebuffer"
+		# 					"xwayland-native-scaling"
+		# 					"variable-refresh-rate"
+		# 				];
+		# 			};
+		# 		};
+		# 	}
+		# ];
+	};
 
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Enable automatic login for the user.
-
-	# Enable Avahi
-	# services.avahi = {
-	# 	enable = true;
-	# };
-
-  # Install firefox.
-  # programs.firefox.enable = true;
-
-  # programs.chromium = {
-  # 	enable = true;
-  # enablePlasmaBrowserIntegration = true;
-	# };
-
-  # Install partition manager
-  programs.partition-manager.enable = true;
-
-  # Install gamemode
-  programs.gamemode.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

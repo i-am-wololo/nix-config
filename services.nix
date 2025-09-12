@@ -1,47 +1,50 @@
 {config, lib, ...} : {
-	services.i2pd = {
-		enable = false;
-		# proto = {
-		# 	http = {
-		# 		enable = true;
-		# 	};
-		#
-		# 	httpProxy = {
-		# 		enable = true;
-		# 	};
-		# 	socksProxy = {
-		# 		enable = true;
-		# 	};
-		#
-		# };
-	};
-
-
-	security.polkit.enable = true;
-	services.displayManager = {
-		gdm = {
+	services = {
+		i2pd = {
 			enable = false;
-			wayland = true;
-		};
+			proto = {
+				http = {
+					enable = true;
+				};
 
-		sddm = {
-			enable = true;
-			wayland = {
-				enable = true;
+				httpProxy = {
+					enable = true;
+				};
+				socksProxy = {
+					enable = true;
+				};
 			};
 		};
+		fprintd.enable = true;
 
-		autoLogin = {
+		desktopManager.plasma6.enable = false;
+		desktopManager.gnome.enable = false;	
+
+		displayManager = {
+				gdm = {
+					enable = true; 
+					wayland = true;
+				};
+
+				sddm = {
+					enable = false; 
+					wayland = {
+						enable = true;
+					};
+				};
+
+				autoLogin = {
+					enable = true;
+					user = "wololo";
+				};
+			};
+		tlp = {
 			enable = true;
-			user = "wololo";
+			settings = {
+			};
 		};
 	};
 
-  services.fprintd = {
-    enable = true;
-  };
-	
-	# plasma DE
-	services.desktopManager.plasma6.enable = true;
+	security.polkit.enable = true;
 }
 

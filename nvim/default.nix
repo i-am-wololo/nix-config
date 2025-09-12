@@ -7,7 +7,10 @@
 	];
 	programs.nixvim = {
 		enable = true;
-		globals.mapleader = ",";
+		globals = {
+			mapleader = ",";
+			neovide_opacity = 0.2;
+		};
 		clipboard = {
 			register = "unnamedplus";
 		};
