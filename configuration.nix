@@ -86,7 +86,7 @@
   users.users.wololo = {
     shell = pkgs.zsh;
     isNormalUser = true;
-    description = "Mehdi Ben Ahmed";
+    description = "wololo";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
