@@ -87,7 +87,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.wololo = {
     isNormalUser = true;
-    description = "Mehdi Ben Ahmed";
+    description = "wololo";
     extraGroups = [ "networkmanager" "wheel" ];
 		shell = pkgs.zsh;
   };
