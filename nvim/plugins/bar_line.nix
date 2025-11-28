@@ -5,7 +5,7 @@
 		};
 
 		lualine = {
-			enable = true;
+			enable = false;
 			settings.options = {
 				component_separators = {
 					left = "";

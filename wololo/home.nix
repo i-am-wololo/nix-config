@@ -4,11 +4,19 @@
 		./packages.nix 
 		./packages
 		./neovideconf.nix
-		./sway
+		# ./sway
 		# ./niri
   ];
 
 	home.stateVersion = "25.11";
+
+	gtk = {
+		enable = true;
+		theme = {
+			name = "adw-gtk3";
+			package = pkgs.adw-gtk3;
+		};
+	};
 
   programs = {
 		zsh = {
@@ -28,9 +36,13 @@
 		};
 
 		git = {
-      enable = true;
-      userName = "wololo";
-      userEmail = "somedudz@protonmail.com";
+      	enable = true;
+				settings = {
+					user = {
+						name = "wololo";
+						email = "somedudz@protonmail.com";
+					};
+				};
 		};
 
 
@@ -43,6 +55,8 @@
 			enable = true;
 			enableZshIntegration = true;
 		};
+
+		foot.enable = false;
 	
 		zoxide = {
 			enable = true;
@@ -63,6 +77,11 @@
 		firefox = {
 			enable = true;
 		};
+		
+		# floorp = {
+		# 	enable = true;
+		# };
+
 	};
 
 }

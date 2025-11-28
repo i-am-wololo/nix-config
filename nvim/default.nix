@@ -9,7 +9,6 @@
 		enable = true;
 		globals = {
 			mapleader = ",";
-			neovide_opacity = 0.2;
 		};
 		clipboard = {
 			register = "unnamedplus";

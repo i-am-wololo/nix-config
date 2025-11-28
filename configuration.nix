@@ -6,7 +6,7 @@
 
 {
 
-	nixpkgs.overlays = [inputs.niri.overlays.niri];
+	# nixpkgs.overlays = [inputs.niri.overlays.niri];
 	nixpkgs.config.permittedInsecurePackages = [
                 "olm-3.2.16"
   ];
@@ -19,11 +19,9 @@
 			./etc/pipewire.nix
 			./services.nix
 			./blacklist.nix
+			./gnome.nix
     ];
 
-	virtualisation.waydroid = {
-		enable = true;
-	};
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -62,6 +60,13 @@
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
 
+  swapDevices = [
+  	{
+	device = "/var/lib/swap";
+	size = 8*1024;
+	}
+  ];
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "fr";
@@ -69,7 +74,7 @@
   };
 
   # Configure console keymap
-  console.keyMap = "fr";
+  console.keyMap = "us";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -123,12 +128,16 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
-    amdvlk
-    driversi686Linux.amdvlk
   ];
 
   environment.sessionVariables = rec {
     GSK_RENDERER = "gl";
+  };
+
+	qt = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita-dark";
   };
 
   environment.variables.EDITOR = "nvim";

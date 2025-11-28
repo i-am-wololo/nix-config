@@ -3,7 +3,6 @@
 		enable = true;
 		settings = {
 			dimInactive = true;
-			transparent = true;
 		};
 	};
 }

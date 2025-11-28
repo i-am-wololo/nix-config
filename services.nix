@@ -18,7 +18,7 @@
 		fprintd.enable = true;
 
 		desktopManager.plasma6.enable = false;
-		desktopManager.gnome.enable = false;	
+		desktopManager.gnome.enable = true;	
 
 		displayManager = {
 				gdm = {
@@ -39,7 +39,7 @@
 				};
 			};
 		tlp = {
-			enable = true;
+			enable = false;
 			settings = {
 			};
 		};

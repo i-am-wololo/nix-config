@@ -1,6 +1,6 @@
 {
-		server.enable = true;
-		enable = true;
+		server.enable = false;
+		enable = false;
 		settings = {
 			main = {
 				font = "Hack Nerd Font:size=12";

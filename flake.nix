@@ -1,14 +1,15 @@
 {
   inputs = {
-    # NixOS official package source, using the nixos-24.11 branch here
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+
+		home-manager = {
+			url = "github:nix-community/home-manager/release-25.11";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 		ps3dec = {
 			inputs.nixpkgs.follows = "nixpkgs";
 			url = "github:i-am-wololo/ps3dec";
-		};
-		home-manager = {
-			url = "github:nix-community/home-manager";
-			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
 		nur = {
@@ -21,12 +22,12 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		niri = {
-			url = "github:sodiboo/niri-flake";
-		};
+		# niri = {
+		# 	url = "github:sodiboo/niri-flake";
+		# };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, nur, niri, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixvim, nur, ... }@inputs: {
 
 
     nixosConfigurations.nixos =  let
@@ -40,7 +41,7 @@
 		modules = [
   	      ./configuration.nix
 
-					niri.nixosModules.niri
+					# niri.nixosModules.niri
 					nixvim.nixosModules.nixvim
   	      home-manager.nixosModules.home-manager {
 						home-manager.extraSpecialArgs = { 
