@@ -13,8 +13,13 @@
 				};
 				tinymist.enable = true;
 				texlab.enable = true;
-				basedpyright.enable = true;
+				basedpyright.enable = false;
+
 				nixd.enable = true;
+				cmake.enable = true;
+
+				mesonlsp.enable = true;
+				clangd.enable = true;	
 				zls = {
 					enable = true;
 					packageFallback = true;

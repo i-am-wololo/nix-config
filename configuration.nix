@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs,  ... }:
+{ config, pkgs, inputs,   ... }:
 
 {
 
@@ -18,12 +18,13 @@
       ./boot.nix
 			./etc/pipewire.nix
 			./services.nix
-			./blacklist.nix
-			./gnome.nix
+			# ./gnome.nix
+			# ./anime.nix 
     ];
 
 
   networking.hostName = "nixos"; # Define your hostname.
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -37,7 +38,7 @@
   time.timeZone = "Europe/Paris";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "fr_FR.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "fr_FR.UTF-8";
@@ -59,6 +60,10 @@
   # Enable OpenGL
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
+
+	programs.virt-manager.enable = true;
+	virtualisation.libvirtd.enable = true;
+	virtualisation.spiceUSBRedirection.enable = true;
 
   swapDevices = [
   	{
@@ -93,14 +98,17 @@
   users.users.wololo = {
     isNormalUser = true;
     description = "wololo";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "gamemode"];
 		shell = pkgs.zsh;
   };
+
 
 	programs = {
 		zsh.enable = true;
 		sway.enable = true;
-		gamemode.enable = true;
+		gamemode = {
+			enable = true;
+		};
 		wireshark.enable = true;
 		# dconf.profiles.user.databases = [
 		# 	{
@@ -127,6 +135,7 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+ 		virtiofsd
     git
   ];
 
@@ -134,11 +143,6 @@
     GSK_RENDERER = "gl";
   };
 
-	qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style = "adwaita-dark";
-  };
 
   environment.variables.EDITOR = "nvim";
   # Some programs need SUID wrappers, can be configured further or are
@@ -153,6 +157,7 @@
 
   services.fprintd = {
     enable = true;
+		tod.driver = pkgs.libfprint-2-tod1-goodix;
   };
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

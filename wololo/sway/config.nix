@@ -14,6 +14,8 @@
 		"XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -4%";
 		"XF86MonBrightnessUp" = "exec brightnessctl set +8%";
 		"XF86MonBrightnessDown" = "exec brightnessctl set -8%";
+		"Print" = "exec grimshot savecopy screen --notify";
+		"Shift+Print" = "exec grimshot savecopy area --notify";
 	};
 
 	bindswitches = {
@@ -64,7 +66,7 @@
 
 	output = {
 		"*" = {
-			bg =	"/etc/wallpapers/thc.png fill" ;
+			bg =	"/etc/wp/mountains.png fill" ;
 		};
 	};
 }

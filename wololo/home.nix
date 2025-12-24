@@ -4,11 +4,13 @@
 		./packages.nix 
 		./packages
 		./neovideconf.nix
-		# ./sway
+		./services.nix
+		./sway
 		# ./niri
   ];
 
 	home.stateVersion = "25.11";
+
 
 	gtk = {
 		enable = true;
@@ -55,8 +57,6 @@
 			enable = true;
 			enableZshIntegration = true;
 		};
-
-		foot.enable = false;
 	
 		zoxide = {
 			enable = true;
@@ -74,13 +74,40 @@
 			];
 		};
 
-		firefox = {
-			enable = true;
-		};
-		
-		# floorp = {
+		# firefox = {
 		# 	enable = true;
 		# };
+
+		obs-studio = {
+			enable = true;
+			plugins = with pkgs.obs-studio-plugins; [
+				input-overlay
+			];
+		};
+
+		librewolf = {
+			enable = true;
+			policies = {
+				Proxy = {
+					Mode = "manual";
+					HTTPProxy = "127.0.0.1:4444";
+					SOCKSProxy = "127.0.0.1:4447";
+				};
+			};
+		};
+		
+		floorp = {
+			enable = true;
+		};
+
+		vesktop = {
+			enable = true;
+			settings = {
+				arRPC = true;
+				checkUpdates = false;
+				appBadge = true;
+			};
+		};
 
 	};
 

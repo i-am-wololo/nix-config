@@ -4,4 +4,5 @@
 	brightnessctl
 	gammastep
 	slurp
+	sway-contrib.grimshot
 ]

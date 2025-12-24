@@ -1,14 +1,14 @@
 {
-		server.enable = false;
-		enable = false;
+		server.enable =  true;
+		enable = true;
 		settings = {
 			main = {
 				font = "Hack Nerd Font:size=12";
 			};
 
 			colors = {
-				alpha = "0.6";
-				background = "1F1F28";
+				alpha = "0.2";
+				background = "000000";
 				foreground = "DCD7BA";
 				selection-background = "363646";
 				selection-foreground = "9e9b93";

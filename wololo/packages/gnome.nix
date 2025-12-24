@@ -1,5 +1,16 @@
 {pkgs, ...} : {
 	home.packages = with pkgs; [
-	blackbox-terminal
+		ptyxis
+		cartridges
+		fractal
+		dissent
+		(weechat.override {
+			configure = {...} : {
+				scripts = with pkgs.weechatScripts; [
+					weechat-go
+					weechat-notify-send
+				];
+			};
+		})
 	];
 }

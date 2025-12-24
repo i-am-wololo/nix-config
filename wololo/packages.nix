@@ -3,7 +3,6 @@
 			nerd-fonts.hack
 			nerd-fonts.fira-code
 
-			obs-studio
   		youtube-music
   		keepassxc
 			tor-browser
@@ -11,15 +10,13 @@
 			unrar-wrapper
 			p7zip
 			logisim-evolution
-			crystal
-			shards
 			imhex
 			file
 			wl-clipboard-x11
+			icoextract
 			rmg-wayland
-			equibop
-			weechat
-			iamb
+			simplex-chat-desktop
+			feather
 
 
 
@@ -28,5 +25,6 @@
 			})
     ]++ [
 			inputs.ps3dec.packages.${pkgs.stdenv.hostPlatform.system}.default
+			inputs.prism.packages.x86_64-linux.default
 		];
 }

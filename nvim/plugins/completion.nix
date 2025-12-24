@@ -10,7 +10,7 @@
 		};
 
 		blink-cmp = {
-			enable = false;
+			enable = true;
 			settings = {
 				signature.enable = true;
 				keymap.preset = "super-tab";

@@ -5,7 +5,7 @@
 		};
 
 		lualine = {
-			enable = false;
+			enable = true;
 			settings.options = {
 				component_separators = {
 					left = "";
@@ -17,6 +17,12 @@
 					right = "";
 				};
 
+			};
+		};
+
+		airline = {
+			enable = false;
+			settings = {
 			};
 		};
 	};

@@ -3,28 +3,18 @@
 		enable = true;
 		timeouts = [
 			{
-				timeout = 30;
-				command = "swaylock -f -c";
-			}
-
-			{
 				timeout = 60;
-				command = "swaymsg output * power off;";
+				command = "${pkgs.swaylock}/bin/swaylock -f -c";
 			}
-
 			{
-				timeout = 120;
-				command = "systemctl hibernate";
+				timeout = 660;
+				command = "${pkgs.systemd}/bin/systemctl sleep";
 			}
 		];
 
-		events = [
-			{
-				event = "before-sleep";
-				command = "swaylock; systemctl hibernate";
-			}
-
-		];
+		events = {
+				before-sleep = "${pkgs.swaylock}/bin/swaylock -f -c";
+			};
 	};
 
 	services.swaync = {

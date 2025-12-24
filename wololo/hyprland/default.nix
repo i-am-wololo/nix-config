@@ -9,7 +9,7 @@
 	programs = {
 		hyprlock = {
 			enable = true;
-
 		};
+		foot = import ../wms/foot.nix;
 	};
 }

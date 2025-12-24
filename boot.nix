@@ -2,12 +2,12 @@
     boot = {
         loader.systemd-boot.enable = true;
         loader.efi.canTouchEfiVariables = true;
-        # plymouth = {
-        #     enable = true;
-        #      theme = "NixOS BGRT";
-        #      themePackages = with pkgs; [nixos-bgrt-plymouth];
-        # };
-        consoleLogLevel = 0;
+        plymouth = {
+            enable = true;
+             theme = "nixos-bgrt";
+             themePackages = with pkgs; [nixos-bgrt-plymouth];
+        };
+        consoleLogLevel = 3;
         initrd.verbose = false;
         kernelParams = [
         "quiet"

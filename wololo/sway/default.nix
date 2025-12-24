@@ -22,9 +22,17 @@
 
 	programs.rofi = {
 		enable = true;
-		package = pkgs.rofi-wayland;
+	};
+
+	home.pointerCursor = {
+		enable = true;
+		size = 24;
+		name = "XCursor-Pro-Dark";
+		package = pkgs.xcursor-pro;
+		sway.enable = true;
+		gtk.enable = true;
 	};
 
 
-	programs.foot = import ./foot.nix;
+	programs.foot = import ../wms/foot.nix;
 }
