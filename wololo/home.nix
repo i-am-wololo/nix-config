@@ -1,5 +1,5 @@
 
-{pkgs, ...} : {
+{inputs, pkgs, ...} : {
 	imports = [
 		./packages.nix 
 		./packages
@@ -82,6 +82,9 @@
 			enable = true;
 			plugins = with pkgs.obs-studio-plugins; [
 				input-overlay
+				obs-vkcapture
+				wlrobs
+				obs-vnc
 			];
 		};
 
@@ -100,16 +103,22 @@
 			enable = true;
 		};
 
-		vesktop = {
+
+		spicetify = let
+     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+   in{
 			enable = true;
-			settings = {
-				arRPC = true;
-				checkUpdates = false;
-				appBadge = true;
-			};
+			enabledExtensions = with spicePkgs.extensions; [
+				adblock
+				lastfm
+				betterGenres
+				powerBar
+			];
+			enabledCustomApps = with spicePkgs.apps; [
+				nameThatTune
+			];
 		};
 
 	};
 
 }
-

@@ -20,7 +20,10 @@
 			./services.nix
 			# ./gnome.nix
 			# ./anime.nix 
-    ];
+  	];
+	powerManagement = {
+		enable = true;
+	};
 
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -62,15 +65,14 @@
   hardware.graphics.enable32Bit = true;
 
 	programs.virt-manager.enable = true;
-	virtualisation.libvirtd.enable = true;
-	virtualisation.spiceUSBRedirection.enable = true;
+	virtualisation = {
+		libvirtd.enable = true;
+		spiceUSBRedirection.enable = true;
+		docker = {
+			enable = true;	
+		};
+	};
 
-  swapDevices = [
-  	{
-	device = "/var/lib/swap";
-	size = 8*1024;
-	}
-  ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -107,6 +109,19 @@
 		zsh.enable = true;
 		sway.enable = true;
 		gamemode = {
+			settings = {
+				custom = {
+					start = ''
+					${pkgs.systemd}/bin/systemctl --user stop swayidle;
+					${pkgs.systemd}/bin/systemctl --user stop wlsunset;
+					'';
+					end = ''
+					${pkgs.systemd}/bin/systemctl --user start swayidle;
+					${pkgs.systemd}/bin/systemctl --user start wlsunset;
+					'';
+
+				};
+			};
 			enable = true;
 		};
 		wireshark.enable = true;

@@ -13,7 +13,7 @@
 				};
 				tinymist.enable = true;
 				texlab.enable = true;
-				basedpyright.enable = false;
+				basedpyright.enable = true;
 
 				nixd.enable = true;
 				cmake.enable = true;

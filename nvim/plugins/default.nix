@@ -15,6 +15,9 @@
 
 	
 	programs.nixvim.plugins = {
+		nvim-tree = {
+			enable = false;
+		};
 		telescope = {
 			enable = false;
 			extensions = {

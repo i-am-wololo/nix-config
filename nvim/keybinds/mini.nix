@@ -18,7 +18,9 @@
 			action.__raw = "function() MiniFiles.open() end";
 			key = "<leader>n";
 			mode = ["n"];
+			
 		}
+
 
 		{
 			action.__raw = "function() MiniSessions.write(vim.fn.input('Session Name > ')) end";
@@ -29,7 +31,11 @@
 		{
 			action.__raw = ''
 			function()
-				session = MiniPick.start({ source = {items = vim.fn.readdir("/home/wololo/.config/nvim/sessions/")}})
+				session = MiniPick.start({ 
+					source = {
+						items = vim.fn.readdir(vim.fn.expand("~/.config/nvim/sessions/"))
+						}
+					})
 				MiniSessions.read(session)
 			end
 			'';

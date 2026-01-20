@@ -8,6 +8,10 @@ imports = [
 	
 	programs.nixvim.keymaps = let mode = [ "n" "v"]; in [
 		{
+		key = "<leader>n";
+		action = "<cmd>NvimTreeToggle<CR>";
+		}
+		{
 			key = "<S-h>";
 			action = "<C-w>h";
 			inherit mode;

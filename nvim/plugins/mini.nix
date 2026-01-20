@@ -4,9 +4,9 @@
 		autoLoad = true;
 		modules = {
 			starter = {};
-			files = {};
 			pick = {};
 			indentscope = {};
+			files = {};
 			pairs = {};
 			git = {};
 			sessions = {

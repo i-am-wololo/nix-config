@@ -7,10 +7,11 @@
 			pcsx2
 			steam-run
 			steam
-			flycast
 			cemu
-			vinegar
 			rimsort
+			ezquake
+			cartridges
+			mangohud
 			# (retroarch.override {
 			# 	cores = with libretro; [
 			# 	];

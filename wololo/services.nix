@@ -1,3 +1,10 @@
-{config, pkgs, inputs, lib, ...} : {
-
-};
+{...} : {
+	services = {
+		easyeffects = {
+			enable = false;
+		};
+		udiskie = {
+			enable = true;
+		};
+	};
+}

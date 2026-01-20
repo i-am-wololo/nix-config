@@ -13,6 +13,7 @@
 	#
   inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+		spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
 		home-manager = {
 			url = "github:nix-community/home-manager";
@@ -33,18 +34,25 @@
 			url = "github:nix-community/nixvim";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
 		prism = {
 			url = "github:ElyPrismLauncher/ElyPrismLauncher";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.0.0";
+
+      # Optional but recommended to limit the size of your system closure.
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
 		# niri = {
 		# 	url = "github:sodiboo/niri-flake";
 		# };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, nur, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixvim, nur, lanzaboote, spicetify-nix, ... }@inputs: {
 
 
     nixosConfigurations.nixos =  let
@@ -56,6 +64,7 @@
 
 		inherit system;
 		modules = [
+          lanzaboote.nixosModules.lanzaboote
   	      ./configuration.nix
 					# niri.nixosModules.niri
 					nixvim.nixosModules.nixvim
@@ -66,7 +75,12 @@
 							};
 							useGlobalPkgs = true;
 							useUserPackages = true;
-							users.wololo = import ./wololo/home.nix;
+							users.wololo = {
+								imports = [
+									./wololo/home.nix
+									spicetify-nix.homeManagerModules.spicetify
+								];
+							};
 						};
   	  		    }
 

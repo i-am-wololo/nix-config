@@ -65,13 +65,16 @@
 				};
 			};
 		tlp = {
-			enable = false;
-			settings = {
-			};
+			enable = true;
+		};
+		udisks2 = {
+			enable = true;
 		};
 	};
 
 	security.polkit.enable = true;
-	security.pam.services.wololo.enableGnomeKeyring = true;
+	# security.pam.services.swaylock = {
+	# 	enableGnomeKeyring = true;
+	# };
 }
 

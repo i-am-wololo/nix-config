@@ -8,14 +8,19 @@
 	keybindings = lib.mkOptionDefault {
 		"Mod4+q" = "kill";
 		"Mod4+Return" = "exec footclient";
-		"Mod4+d" = "exec rofi -show drun";
+		"Mod4+d" = "exec rofi -show drun -show-icons";
 		"Mod4+n" = "exec neovide";
 		"XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +4%";
 		"XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -4%";
-		"XF86MonBrightnessUp" = "exec brightnessctl set +8%";
-		"XF86MonBrightnessDown" = "exec brightnessctl set -8%";
-		"Print" = "exec grimshot savecopy screen --notify";
-		"Shift+Print" = "exec grimshot savecopy area --notify";
+		"XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 8%+";
+		"XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 8%-";
+
+		"Print" = "exec ${pkgs.sway-contrib.grimshot}/bin/grimshot savecopy screen --notify";
+		"Shift+Print" = "exec ${pkgs.sway-contrib.grimshot}/bin/grimshot savecopy area --notify";
+
+		"XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
+		"XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
+		"XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
 	};
 
 	bindswitches = {

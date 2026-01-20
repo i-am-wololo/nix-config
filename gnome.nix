@@ -10,6 +10,7 @@
 	environment.systemPackages = with pkgs; [
 		gnomeExtensions.appindicator
 		gnome-extension-manager
+		ptyxis
 	];
 programs.nautilus-open-any-terminal = {
   enable = true;
