@@ -73,5 +73,11 @@
 		"*" = {
 			bg =	"/etc/wp/mountains.png fill" ;
 		};
+		"HDMI-1" = {
+			position = "1920,0";
+		};
+		"eDP-1" = {
+			position = "0,0";
+		};
 	};
 }

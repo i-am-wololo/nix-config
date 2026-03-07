@@ -70,7 +70,7 @@
 		mpv = {
 			enable = true;
 			scripts = with pkgs; [
-				mpvScripts.modernx
+				mpvScripts.uosc
 			];
 		};
 
@@ -116,7 +116,18 @@
 			];
 			enabledCustomApps = with spicePkgs.apps; [
 				nameThatTune
+				# {
+				# 	src = pkgs.fetchFromGitHub {
+				# 		owner = "Pithaya";
+				# 		repo = "spicetify-apps";
+				# 		# rev = "1433ef3";
+				# 		# hash = "";
+				# 		rootDir = "/custom-apps/eternal-jukebox";
+				# 	};
+				# 	name = "Jukebox";
+				# }
 			];
+			theme = spicePkgs.themes.text;
 		};
 
 	};

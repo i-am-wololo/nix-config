@@ -3,7 +3,6 @@
 		nerd-fonts.hack
 		nerd-fonts.fira-code
 
-		pear-desktop
 		keepassxc
 		tor-browser
 		lazygit
@@ -17,24 +16,9 @@
 		]))
 		file
 		wl-clipboard-x11
-		icoextract
 		rmg-wayland
-		simplex-chat-desktop
 		feather
-		(discord.override {
-			withOpenASAR = true;
-			withEquicord = true;
-		})
-
-
-		(weechat.override {
-			configure = {...} : {
-				scripts = with pkgs.weechatScripts; [
-					weechat-go
-					weechat-notify-send
-				];
-			};
-		})
+		tor
 
 		(bottles.override {
 			removeWarningPopup = true;
