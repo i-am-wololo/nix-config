@@ -103,7 +103,7 @@
   users.users.wololo = {
     isNormalUser = true;
     description = "wololo";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "gamemode"];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "gamemode" "docker"];
 		shell = pkgs.zsh;
   };
 

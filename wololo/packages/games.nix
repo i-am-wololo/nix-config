@@ -9,7 +9,6 @@
 			steam
 			cemu
 			rimsort
-			ezquake
 			cartridges
 			mangohud
 			# (retroarch.override {

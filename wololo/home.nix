@@ -9,7 +9,7 @@
 		# ./niri
   ];
 
-	home.stateVersion = "25.11";
+	home.stateVersion = "26.05";
 
 
 	gtk = {
@@ -17,6 +17,10 @@
 		theme = {
 			name = "adw-gtk3";
 			package = pkgs.adw-gtk3;
+		};
+		iconTheme = {
+			name = "Colloid-Dark";
+			package = pkgs.colloid-icon-theme;
 		};
 	};
 

@@ -16,6 +16,7 @@
 				basedpyright.enable = true;
 
 				nixd.enable = true;
+				nim_langserver.enable = true;
 				cmake.enable = true;
 				emmet_language_server.enable = true;
 

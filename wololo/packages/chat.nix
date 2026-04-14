@@ -4,6 +4,7 @@
 			withOpenASAR = true;
 			withVencord = true;
 		})
+		legcord
 		(weechat.override {
 			configure = {...} : {
 				scripts = with pkgs.weechatScripts; [

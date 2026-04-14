@@ -1,7 +1,7 @@
 {...} : {
 	programs.nixvim.plugins = { 
 
-		neocord = {
+		cord = {
 			enable = true;
 			};
 		

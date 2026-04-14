@@ -8,7 +8,7 @@
 					font = "Hack Nerd Font:size=12";
 				};
 
-				colors = {
+				colors-dark = {
 					alpha = "0.2";
 					background = "000000";
 					foreground = "DCD7BA";

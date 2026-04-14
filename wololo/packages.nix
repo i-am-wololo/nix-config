@@ -9,14 +9,8 @@
 		unrar-wrapper
 		p7zip
 		logisim-evolution
-		imhex
-		(cutter.withPlugins (passthru: with passthru; [
-			jsdec
-			rz-ghidra	
-		]))
 		file
 		wl-clipboard-x11
-		rmg-wayland
 		feather
 		tor
 

@@ -3,5 +3,6 @@
 		ptyxis
 		fractal
 		dissent
+		foliate
 	];
 }

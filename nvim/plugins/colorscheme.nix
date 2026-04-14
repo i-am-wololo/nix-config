@@ -1,9 +1,11 @@
 {...} : {
-	programs.nixvim.colorschemes.kanagawa-paper = {
+	programs.nixvim.colorschemes.nightfox = {
 		enable = true;
+		flavor = "carbonfox";
 		settings = {
-			dimInactive = true;
-			transparent = true;
+			options = {
+				transparent = true;
+			};
 		};
 	};
 }

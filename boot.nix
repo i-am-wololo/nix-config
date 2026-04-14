@@ -26,6 +26,9 @@
              theme = "nixos-bgrt";
              themePackages = with pkgs; [nixos-bgrt-plymouth];
         };
+				extraModprobeConfig = ''
+				options v4l2loopback exclusive_caps=1 card_label="V4L2"
+				'';
         consoleLogLevel = 3;
         initrd.verbose = false;
         kernelParams = [
