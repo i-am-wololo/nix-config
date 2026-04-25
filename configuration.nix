@@ -10,6 +10,13 @@
 	nixpkgs.config.permittedInsecurePackages = [
                 "olm-3.2.16"
   ];
+	nixpkgs.overlays = [
+		(final: prev: {
+			openldap = prev.openldap.overrideAttrs (oldAttrs: {
+				doCheck = false;
+			});
+		})
+	];
 
   imports =
     [ # Include the results of the hardware scan.

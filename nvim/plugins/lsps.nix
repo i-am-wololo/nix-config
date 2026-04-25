@@ -20,10 +20,15 @@
 				cmake.enable = true;
 				emmet_language_server.enable = true;
 
+
 				mesonlsp.enable = true;
 				clangd.enable = true;	
 				zls = {
 					enable = true;
+					packageFallback = true;
+				};
+				ghcide = {
+					enable = false;
 					packageFallback = true;
 				};
 			};

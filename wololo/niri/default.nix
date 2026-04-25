@@ -21,7 +21,9 @@
 
 	programs.rofi = {
 		enable = true;
-		package = pkgs.rofi-wayland;
+		theme = builtins.fetchUrl {
+			url = "https://raw.githubusercontent.com/newmanls/rofi-themes-collection/refs/heads/master/themes/spotlight-dark.rasi";
+		};
 	};
 
 	programs.foot = import ./foot.nix;

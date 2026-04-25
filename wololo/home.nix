@@ -114,9 +114,9 @@
 			enable = true;
 			enabledExtensions = with spicePkgs.extensions; [
 				adblock
-				lastfm
 				betterGenres
 				powerBar
+				fullScreen	
 			];
 			enabledCustomApps = with spicePkgs.apps; [
 				nameThatTune

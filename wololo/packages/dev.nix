@@ -3,9 +3,5 @@
 	home.packages = with pkgs;[
 		docker-compose	
 		imhex
-		(cutter.withPlugins (passthru: with passthru; [
-			jsdec
-			rz-ghidra	
-		]))
 	];
 }

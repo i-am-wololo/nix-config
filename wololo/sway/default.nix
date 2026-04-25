@@ -29,12 +29,6 @@
 			sha256 = "sha256:1hk4gcg0mvn91i2lygkhv8m51dq21zh4acdfs6kbrn78hk94rrng";
 		};
 	};
-	xdg.portal = {
-		enable = true;
-		extraPortals = with pkgs; [
-			xdg-desktop-portal-wlr
-		];
-	};
 
 	home.pointerCursor = {
 		enable = true;

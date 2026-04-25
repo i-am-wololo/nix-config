@@ -18,13 +18,11 @@
 			}
 		];
 
-		events = [
-			{
-				event = "before-sleep";
+		events = {
+			before-sleep = {
 				command = "swaylock; systemctl hibernate";
-			}
-
-		];
+			};
+		};
 	};
 
 	services.swaync = {
