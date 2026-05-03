@@ -5,8 +5,7 @@
 			enable = true;
 			settings = {
 				general = {
-				 before
-				}
+				};
 				listener = [
 
 			{

@@ -127,7 +127,7 @@
 			};
 			enable = true;
 		};
-		wireshark.enable = true;
+		wireshark.enable = false;
 		# dconf.profiles.user.databases = [
 		# 	{
 		# 		settings = {

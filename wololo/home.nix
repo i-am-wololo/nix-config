@@ -27,18 +27,9 @@
   programs = {
 		zsh = {
 			enable = true;
-			enableCompletion = true;
-			plugins = [
-				{
-					name = "zsh-syntax-highlighting";
-					src = pkgs.fetchFromGitHub {
-						owner = "zsh-users";
-						repo = "zsh-syntax-highlighting";
-						rev = "master";
-						sha256 = "KRsQEDRsJdF7LGOMTZuqfbW6xdV5S38wlgdcCM98Y/Q=";
-					};
-				}
-			];
+			enableCompletion.enable = true;
+			autosuggestion.enable = true;
+			syntaxHighlighting.enable = true;
 		};
 
 		git = {
@@ -107,6 +98,7 @@
 			enable = true;
 		};
 
+		nixcord = import ./nixcordconfig.nix;
 
 		spicetify = let
      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};

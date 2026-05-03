@@ -1,19 +1,20 @@
 {
-	# nixConfig = {
-	# 	#cachix 
-	#    substituters = [ 
-	# 		"https://ezkea.cachix.org" 
-	#      "https://nix-community.cachix.org"
-	# 	];
-	#    trusted-public-keys = [ 
-	# 		"ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" 
-	#      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-	# 	];
-	#  };
-	#
+nixConfig = {
+    extra-substituters = [ 
+      "https://nix-community.cachix.org"
+    ];
+    extra-trusted-public-keys = [ 
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" 
+    ];
+  };
   inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-		spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+		spicetify-nix = {
+			url = "github:Gerg-L/spicetify-nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
+		nixcord.url = "github:FlameFlag/nixcord";
 
 		home-manager = {
 			url = "github:nix-community/home-manager";
@@ -51,7 +52,7 @@
 		# };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, nur, lanzaboote, spicetify-nix, ... }@inputs: {
+  outputs = { self, nixpkgs, nixcord, home-manager, nixvim, nur, lanzaboote, spicetify-nix, ... }@inputs: {
 
 
     nixosConfigurations.nixos =  let
@@ -63,6 +64,15 @@
 
 		inherit system;
 		modules = [
+					({ ... }: {
+						nixpkgs.overlays = [
+							(final: prev: {
+								openldap = prev.openldap.overrideAttrs (old: {
+									doCheck = false;
+								});
+							})
+						];
+					})
           lanzaboote.nixosModules.lanzaboote
   	      ./configuration.nix
 					# niri.nixosModules.niri
@@ -77,6 +87,7 @@
 							users.wololo = {
 								imports = [
 									./wololo/home.nix
+									nixcord.homeModules.nixcord
 									spicetify-nix.homeManagerModules.spicetify
 								];
 							};
