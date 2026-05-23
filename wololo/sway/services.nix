@@ -15,6 +15,7 @@
 
 			events = {
 					before-sleep = "${pkgs.swaylock-effects}/bin/swaylock -f --screenshot --indicator --effect-blur 7x3";
+					after-resume = "${pkgs.sway}/bin/swaymsg 'output * dpms on'";
 				};
 		};
 

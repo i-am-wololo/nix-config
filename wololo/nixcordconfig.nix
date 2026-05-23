@@ -5,25 +5,31 @@
 		equicord.enable = true;
 		openASAR.enable = true;
 	};
+	legcord = {
+		enable = true;
+		equicord.enable = true;
+	};
 	config = {
 		plugins = {
 			fakeNitro.enable = true;
 			betterActivities.enable = true;
 			questify = {
 				enable = true;
-				completeAchievementQuestsInBackground = true;
-				completeGameQuestsInBackground = true;
-				completeVideoQuestsInBackground = true;
+				allowChangingDangerousSettings = true;
+				autoCompleteQuestTypes = {
+
+				};
 			};
 			messageLoggerEnhanced.enable = true;
 			noBlockedMessages.enable = true;
 
 		};
+
 		themeLinks = [
 			"https://raw.githubusercontent.com/refact0r/system24/refs/heads/main/theme/system24.theme.css"
 		];
-		enabledThemes = [
-			"system24.theme.css"
+		enabledThemeLinks = [
+			"https://raw.githubusercontent.com/refact0r/system24/refs/heads/main/theme/system24.theme.css"
 		];
 	};
 

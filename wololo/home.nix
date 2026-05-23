@@ -27,21 +27,9 @@
   programs = {
 		zsh = {
 			enable = true;
-			enableCompletion.enable = true;
 			autosuggestion.enable = true;
 			syntaxHighlighting.enable = true;
 		};
-
-		git = {
-      	enable = true;
-				settings = {
-					user = {
-						name = "wololo";
-						email = "somedudz@protonmail.com";
-					};
-				};
-		};
-
 
   	starship = {
      	enable = true;
@@ -57,15 +45,31 @@
 			enable = true;
 			enableZshIntegration = true;
 		};
-	
+
+		git = {
+      	enable = true;
+				settings = {
+					user = {
+						name = "wololo";
+						email = "somedudz@protonmail.com";
+					};
+				};
+		};
+
+		nheko = {
+			enable = true;
+		};
+
 		aria2 = {
 			enable = true;
 		};
 
 		mpv = {
 			enable = true;
-			scripts = with pkgs; [
-				mpvScripts.uosc
+			scripts = with pkgs.mpvScripts; [
+				cutter
+				webtorrent-mpv-hook
+				uosc
 			];
 		};
 

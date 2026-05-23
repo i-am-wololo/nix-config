@@ -88,6 +88,8 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+	hardware.sane.enable = true;
+	hardware.sane.extraBackends = [ pkgs.sane-airscan ];
 
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
@@ -103,12 +105,16 @@
   users.users.wololo = {
     isNormalUser = true;
     description = "wololo";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "gamemode" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "gamemode" "docker" "scanner" "lp"];
 		shell = pkgs.zsh;
   };
 
 
 	programs = {
+		appimage = {
+			enable = true;
+			binfmt = true;
+		};
 		zsh.enable = true;
 		sway.enable = true;
 		gamemode = {

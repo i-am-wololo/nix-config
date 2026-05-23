@@ -3,7 +3,7 @@
     	tetrio-desktop
 			gamescope
 			dolphin-emu
-      rpcs3
+      # rpcs3
 			pcsx2
 			steam-run
 			steam

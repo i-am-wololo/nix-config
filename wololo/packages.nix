@@ -14,11 +14,8 @@
 		feather
 		tor
 
-		(bottles.override {
-			removeWarningPopup = true;
-		})
 	]++ [
 		inputs.ps3dec.packages.${pkgs.stdenv.hostPlatform.system}.default
-		inputs.prism.packages.x86_64-linux.default
+		# inputs.prism.packages.x86_64-linux.default
 	];
 }

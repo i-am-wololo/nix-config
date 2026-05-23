@@ -2,7 +2,7 @@
 	programs.nixvim.plugins = { 
 
 		cord = {
-			enable = true;
+			enable = false;
 			};
 		
 		lazygit =  {

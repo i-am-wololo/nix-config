@@ -10,4 +10,5 @@
 		})
 		simplex-chat-desktop
 	];
+
 }

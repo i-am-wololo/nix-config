@@ -2,8 +2,6 @@
 	modifier = "Mod4";
 	terminal = "foot";
 
-	bindswitches = {
-	};
 
 	keybindings = lib.mkOptionDefault {
 		"Mod4+q" = "kill";

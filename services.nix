@@ -1,5 +1,8 @@
-{config, lib, ...} : {
+{config, lib, pkgs, ...} : {
 	services = {
+		udev.packages = [pkgs.sane-airscan];
+		avahi.enable =true;
+		avahi.nssmdns = true;
 		blocky = {
 			enable = false;
 			settings = {
@@ -49,7 +52,6 @@
 		displayManager = {
 				gdm = {
 					enable = true; 
-					wayland = true;
 				};
 
 				sddm = {
