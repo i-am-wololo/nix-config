@@ -1,11 +1,11 @@
 {...} : {
-	programs.nixvim.colorschemes.nightfox = {
+	programs.nixvim.colorschemes.kanagawa = {
 		enable = true;
-		flavor = "carbonfox";
 		settings = {
-			options = {
-				transparent = true;
-			};
+			theme = "dragon";
+			dimInactive = true;
+			transparent = true;
 		};
 	};
+	programs.nixvim.colorscheme = "kanagawa-dragon";
 }

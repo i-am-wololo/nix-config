@@ -2,7 +2,7 @@
 	services = {
 		udev.packages = [pkgs.sane-airscan];
 		avahi.enable =true;
-		avahi.nssmdns = true;
+		avahi.nssmdns4 = true;
 		blocky = {
 			enable = false;
 			settings = {
@@ -47,9 +47,11 @@
 
 		flatpak.enable = true;
 		gnome.gnome-keyring.enable = true;
-		desktopManager.plasma6.enable = false;
 
 		displayManager = {
+				# ly = {
+				# 	enable = false;
+				# };
 				gdm = {
 					enable = true; 
 				};
@@ -72,11 +74,13 @@
 		udisks2 = {
 			enable = true;
 		};
+		sunshine = {
+			enable = true;
+			capSysAdmin = true;
+			openFirewall = true;
+		};
 	};
 
 	security.polkit.enable = true;
-	# security.pam.services.swaylock = {
-	# 	enableGnomeKeyring = true;
-	# };
 }
 

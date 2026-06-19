@@ -5,11 +5,13 @@
 		./packages
 		./neovideconf.nix
 		./services.nix
-		./sway
-		# ./niri
+		# ./hyprland
+		# ./sway
+		./niri
   ];
 
 	home.stateVersion = "26.05";
+	services.gnome-keyring.enable = true;
 
 
 	gtk = {

@@ -39,6 +39,4 @@
 		gtk.enable = true;
 	};
 
-	programs = {
-	};
 }

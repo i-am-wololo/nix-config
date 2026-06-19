@@ -47,12 +47,12 @@ nixConfig = {
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-		# niri = {
-		# 	url = "github:sodiboo/niri-flake";
-		# };
+		niri = {
+			url = "github:sodiboo/niri-flake";
+		};
   };
 
-  outputs = { self, nixpkgs, nixcord, home-manager, nixvim, nur, lanzaboote, spicetify-nix, ... }@inputs: {
+  outputs = { self, nixpkgs, niri, nixcord, home-manager, nixvim, nur, lanzaboote, spicetify-nix, ... }@inputs: {
 
 
     nixosConfigurations.nixos =  let
@@ -64,18 +64,9 @@ nixConfig = {
 
 		inherit system;
 		modules = [
-					({ ... }: {
-						nixpkgs.overlays = [
-							(final: prev: {
-								openldap = prev.openldap.overrideAttrs (old: {
-									doCheck = false;
-								});
-							})
-						];
-					})
           lanzaboote.nixosModules.lanzaboote
   	      ./configuration.nix
-					# niri.nixosModules.niri
+					niri.nixosModules.niri
 					nixvim.nixosModules.nixvim
   	      home-manager.nixosModules.home-manager {
 						home-manager = {

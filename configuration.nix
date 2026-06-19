@@ -6,7 +6,7 @@
 
 {
 
-	# nixpkgs.overlays = [inputs.niri.overlays.niri];
+	nixpkgs.overlays = [inputs.niri.overlays.niri];
 	nixpkgs.config.permittedInsecurePackages = [
                 "olm-3.2.16"
   ];
@@ -64,7 +64,6 @@
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
 
-	programs.virt-manager.enable = true;
 	virtualisation = {
 		libvirtd.enable = true;
 		spiceUSBRedirection.enable = true;
@@ -111,12 +110,13 @@
 
 
 	programs = {
+		virt-manager.enable = true;
 		appimage = {
 			enable = true;
-			binfmt = true;
 		};
 		zsh.enable = true;
 		sway.enable = true;
+		niri.enable = true;
 		gamemode = {
 			settings = {
 				custom = {
@@ -171,7 +171,7 @@
   environment.variables.EDITOR = "nvim";
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
+  # programs.mtr.enable = true;;
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
