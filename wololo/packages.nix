@@ -1,10 +1,11 @@
-{pkgs, inputs, ...} : {
+{pkgs, helium, ...} : {
 	home.packages = with pkgs; [
 		nerd-fonts.hack
 		nerd-fonts.fira-code
 
 		keepassxc
 		tor-browser
+		pear-desktop
 		lazygit
 		unrar-wrapper
 		p7zip
@@ -15,7 +16,7 @@
 		tor
 
 	]++ [
-		inputs.ps3dec.packages.${pkgs.stdenv.hostPlatform.system}.default
+		helium.packages.${pkgs.stdenv.hostPlatform.system}.default
 		# inputs.prism.packages.x86_64-linux.default
 	];
 }

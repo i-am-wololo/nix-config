@@ -8,6 +8,7 @@
 				];
 			};
 		})
+		iamb
 		simplex-chat-desktop
 	];
 

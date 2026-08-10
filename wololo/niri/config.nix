@@ -15,7 +15,10 @@
 			"Mod+j".action = focus-window-or-workspace-down;
 			"Mod+k".action = focus-window-or-workspace-up;
 			"Mod+f".action = maximize-column;
+			"Mod+Shift+F".action = fullscreen-window;
 			"Mod+l".action = focus-column-right;
+			"Mod+o".action = consume-or-expel-window-left;
+			"Mod+p".action = consume-or-expel-window-right;
 			"Mod+Shift+h".action = move-column-left;
 			"Mod+Shift+j".action = move-window-down-or-to-workspace-down;
 			"Mod+Shift+k".action = move-window-up-or-to-workspace-up;
@@ -40,8 +43,31 @@
 			scale = 1.0;
 		};
 	};
+	window-rules = [
+		{
+			matches = [
+				{app-id = "^footclient$";}
+				{app-id = "^neovide$";}
+			];
+			background-effect.blur = false;
+		}
+	];
+	layer-rules = [
+		{
+			matches = [{namespace = "^wallpaper$";}];
+			place-within-backdrop = true;
+		}
+		{
+			matches = [{namespace = ".waybar-wrapped"; layer = "top";}];
+		}
+	];
+	blur.enable = false;
+	layout = {
+		background-color = "transparent";
+	};
 
 	spawn-at-startup = [
 		{argv = ["${pkgs.swaybg}/bin/swaybg" "--image" "/etc/wp/mountains.png"];}
+		{argv = ["keepassxc"];}
 	];
 }

@@ -17,6 +17,7 @@
       ./nvim
       ./boot.nix
 			./etc/pipewire.nix
+			# ./etc/hosts.nix
 			./services.nix
 			# ./gnome.nix
 			# ./anime.nix 
@@ -200,4 +201,9 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
 
+	qt = {
+		enable = true;
+		platformTheme = "gnome"; # Maps Qt styling cleanly to GNOME/GTK icons
+		style = "adwaita-dark";  # Or "breeze" if you prefer Plasma styling
+	};
 }

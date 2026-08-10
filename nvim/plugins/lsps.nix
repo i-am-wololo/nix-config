@@ -6,6 +6,7 @@
 				ts_ls = {
 					enable = true;
 				};
+				qmlls.enable = true;
 				rust_analyzer = {
 					enable = true;
 					installCargo = true;

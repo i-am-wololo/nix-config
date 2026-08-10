@@ -9,6 +9,9 @@
 
 	home.packages = with pkgs; [
 		xwayland-satellite
+		nautilus
+		pavucontrol
+		waybar-mpris
 	];
 	
 	programs.niri = {
@@ -26,11 +29,11 @@
 	programs.waybar = {
 		enable = true;
 		systemd.enable = true;
-		style = builtins.readFile ../wms/style.css;
+		style = builtins.readFile ../wms/waybar.css;
 	};
 
 xdg.configFile."${config.xdg.configHome}/waybar/config.jsonc" = {
-	source = ../wms/config.jsonc;
+	source = ../wms/waybar.jsonc;
 };
 
 	home.pointerCursor = {
@@ -44,12 +47,15 @@ xdg.configFile."${config.xdg.configHome}/waybar/config.jsonc" = {
 
   xdg.portal = {
     enable = true;
-		configPackages = [ pkgs.gnome-session ];
+    xdgOpenUsePortal = true;
     extraPortals = [
-       pkgs.xdg-desktop-portal-gnome
-       pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
     ];
-	};
+    config = {
+      common.default = [ "gnome" ];
+    };
+  };
 
 
 }

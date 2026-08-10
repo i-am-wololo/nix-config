@@ -1,20 +1,17 @@
-{pkgs, ...}: {
+{pkgs, nu, ...}: {
 	home.packages = with pkgs; [
     	tetrio-desktop
 			gamescope
 			dolphin-emu
-			# rpcs3
-			# (rpcs3.overrideAttrs (prev: {
-			# 	cmakeFlags = prev.cmakeFlags ++ [ (lib.cmakeBool "BUILD_SHARED_LIBS" false) ];
-			# }))
 			pcsx2
 			shadps4-qtlauncher
+			umu-launcher
+			nero-umu
 			eden
 			steam-run
 			steam
 			cemu
-			rimsort
-			cartridges
+			# rimsort
 			mangohud
 			# (retroarch.override {
 			# 	cores = with libretro; [
@@ -22,4 +19,5 @@
 			# })
 
 	];
+	# ] ++ with nu.[];
 }

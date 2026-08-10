@@ -9,38 +9,37 @@
 				};
 
 				colors-dark = {
-					alpha = "0.2";
-					background = "181616";
-					foreground = "DCD7BA";
-					selection-background = "363646";
-					selection-foreground = "9e9b93";
-					urls = "938AA9";
-					search-box-no-match = "aca9a4 cc928e";
-					search-box-match = "698a9b aca9a4";
+						alpha = "1";
+						background = "161616";
+						foreground = "f2f4f8";
+						selection-background = "2a2a2a";
+						selection-foreground = "f2f4f8";
+						urls = "78a9ff"; # Map to Carbonfox blue (regular4)
+						search-box-no-match = "484848 f16da6"; # bright0 (gray) and bright1 (pink)
+						search-box-match = "8cb6ff 484848"; # bright4 (blue) and bright0 (gray)
 
-					jump-labels = "c4b28a d4c196";
+						jump-labels = "08bdba 2dc7c4"; # regular3 and bright3 (teal)
 
-					# Normal colors
-					regular0 = "393836";
-					regular1 = "c4746e";
-					regular2 = "699469";
-					regular3 = "c4b28a";
-					regular4 = "435965";
-					regular5 = "a292a3";
-					regular6 = "8ea49e";
-					regular7 = "C8C093";
+						# Normal colors
+						regular0 = "282828";
+						regular1 = "ee5396";
+						regular2 = "25be6a";
+						regular3 = "08bdba";
+						regular4 = "78a9ff";
+						regular5 = "be95ff";
+						regular6 = "33b1ff";
+						regular7 = "dfdfe0";
 
-					# Bright colors
-					bright0 = "aca9a4";
-					bright1 = "cc928e";
-					bright2 = "72a072";
-					bright3 = "d4c196";
-					bright4 = "698a9b";
-					bright5 = "b4a7b5";
-					bright6 = "96ada7";
-					bright7 = "d5cd9d";
-
-			};
+						# Bright colors
+						bright0 = "484848";
+						bright1 = "f16da6";
+						bright2 = "46c880";
+						bright3 = "2dc7c4";
+						bright4 = "8cb6ff";
+						bright5 = "c8a5ff";
+						bright6 = "52bdff";
+						bright7 = "e4e4e5";
+				};
 		};
 	};
 }	

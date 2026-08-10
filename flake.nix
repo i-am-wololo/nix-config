@@ -8,7 +8,8 @@ nixConfig = {
     ];
   };
   inputs = {
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+		nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+		nu.url = "github:NixOS/nixpkgs/nixos-unstable";
 		spicetify-nix = {
 			url = "github:Gerg-L/spicetify-nix";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -17,7 +18,7 @@ nixConfig = {
 		nixcord.url = "github:FlameFlag/nixcord";
 
 		home-manager = {
-			url = "github:nix-community/home-manager";
+			url = "github:nix-community/home-manager/release-26.05";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
@@ -41,18 +42,27 @@ nixConfig = {
 		};
 
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v1.0.0";
+      url = "github:nix-community/lanzaboote/v1.1.0";
 
       # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
 		niri = {
-			url = "github:sodiboo/niri-flake";
+			url = "github:epireyn/niri-flake";
+		};
+		sops-nix = {
+			url = "github:mic92/sops-nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
+		helium = {
+			url = "github:schembriaiden/helium-browser-nix-flake";
+			inputs.nixpkgs.follows = "nixpkgs";
 		};
   };
 
-  outputs = { self, nixpkgs, niri, nixcord, home-manager, nixvim, nur, lanzaboote, spicetify-nix, ... }@inputs: {
+  outputs = { self, nixpkgs, niri, nixcord, home-manager, nixvim, nur, lanzaboote, spicetify-nix, sops-nix, helium, nu, ... }@inputs: {
 
 
     nixosConfigurations.nixos =  let
@@ -71,15 +81,16 @@ nixConfig = {
   	      home-manager.nixosModules.home-manager {
 						home-manager = {
 							extraSpecialArgs = { 
-								inherit inputs system;
+								inherit inputs system helium nu;
 							};
 							useGlobalPkgs = true;
 							useUserPackages = true;
 							users.wololo = {
 								imports = [
-									./wololo/home.nix
 									nixcord.homeModules.nixcord
 									spicetify-nix.homeManagerModules.spicetify
+									./wololo/home.nix
+									sops-nix.homeManagerModules.sops
 								];
 							};
 						};

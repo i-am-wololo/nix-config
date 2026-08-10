@@ -6,10 +6,17 @@
 		openASAR.enable = true;
 	};
 	legcord = {
-		enable = true;
 		equicord.enable = true;
 	};
+	dorion = {
+		enable = false;
+	};
+
+	equibop = {
+		enable = true;
+	};
 	config = {
+		autoUpdate = true;
 		plugins = {
 			fakeNitro.enable = true;
 			betterActivities.enable = true;
@@ -17,11 +24,17 @@
 				enable = true;
 				allowChangingDangerousSettings = true;
 				autoCompleteQuestTypes = {
+					ACHIVEMENT_IN_ACTIVITY = true;
+					PLAY_ACTIVITY = true;
+					WATCH_VIDEO_ON_MOBILE = true;
+					WATCH_VIDEO = true;
 
 				};
 			};
 			messageLoggerEnhanced.enable = true;
 			noBlockedMessages.enable = true;
+			richMagnetLinks.enable = true;
+			equicordHelper.enable = true;
 
 		};
 

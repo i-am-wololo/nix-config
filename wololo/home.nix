@@ -8,6 +8,7 @@
 		# ./hyprland
 		# ./sway
 		./niri
+		# ./agenixconfig.nix
   ];
 
 	home.stateVersion = "26.05";
@@ -37,6 +38,15 @@
      	enable = true;
      	enableZshIntegration = true;
   	};
+
+		zellij = {
+			enable = false;
+			enableZshIntegration = true;
+			settings = {
+				theme = "ansi";
+				show_startup_tips = false;
+			};
+		};
 
 		direnv = {
 			enable = true;
@@ -69,7 +79,6 @@
 		mpv = {
 			enable = true;
 			scripts = with pkgs.mpvScripts; [
-				cutter
 				webtorrent-mpv-hook
 				uosc
 			];
@@ -101,7 +110,7 @@
 		};
 		
 		floorp = {
-			enable = true;
+			enable = false;
 		};
 
 		nixcord = import ./nixcordconfig.nix;
@@ -110,25 +119,12 @@
      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
    in{
 			enable = true;
+			alwaysEnableDevTools = true;
 			enabledExtensions = with spicePkgs.extensions; [
 				adblock
-				betterGenres
 				powerBar
-				fullScreen	
 			];
-			enabledCustomApps = with spicePkgs.apps; [
-				nameThatTune
-				# {
-				# 	src = pkgs.fetchFromGitHub {
-				# 		owner = "Pithaya";
-				# 		repo = "spicetify-apps";
-				# 		# rev = "1433ef3";
-				# 		# hash = "";
-				# 		rootDir = "/custom-apps/eternal-jukebox";
-				# 	};
-				# 	name = "Jukebox";
-				# }
-			];
+			wayland = true;
 			theme = spicePkgs.themes.text;
 		};
 

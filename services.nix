@@ -1,33 +1,13 @@
 {config, lib, pkgs, ...} : {
 	services = {
-		udev.packages = [pkgs.sane-airscan];
+		udev = {
+			packages = [pkgs.sane-airscan];
+			extraRules = ''
+    SUBSYSTEM=="input", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="3106", MODE="0660", GROUP="input"
+			'';
+		};
 		avahi.enable =true;
 		avahi.nssmdns4 = true;
-		blocky = {
-			enable = false;
-			settings = {
-				upstreams.groups.default = [
-					"https://one.one.one.one/dns-query" # Using Cloudflare's DNS over HTTPS server for resolving queries.
-				];
-				# For initially solving DoH/DoT Requests when no system Resolver is available.
-				bootstrapDns = {
-					upstream = "https://one.one.one.one/dns-query";
-					ips = [ "1.1.1.1" "1.0.0.1" ];
-				};
-				#Enable blocking of certain domains.
-				blocking = {
-					denylist = {
-						#Adblocking
-						ads = ["https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"];
-					};
-					#Configure what block categories are used
-					clientGroupsBlock = {
-						default = [ "ads" ];
-						};
-					};
-			};
-		};
-
 		i2pd = {
 			enable = true;
 			proto = {
@@ -72,6 +52,9 @@
 			enable = true;
 		};
 		udisks2 = {
+			enable = true;
+		};
+		joycond = {
 			enable = true;
 		};
 		sunshine = {

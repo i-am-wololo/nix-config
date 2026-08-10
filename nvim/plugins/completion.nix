@@ -5,7 +5,6 @@
 			enable = false;
 			installArtifacts = true;
 			settings = {
-				auto_start = "shut-up";
 			};
 		};
 
